@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */; };
-		3A9F1BF91CD35E19000A1475 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1BF81CD35E19000A1475 /* ViewController.swift */; };
 		3A9F1BFC1CD35E19000A1475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1BFA1CD35E19000A1475 /* Main.storyboard */; };
 		3A9F1BFE1CD35E19000A1475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */; };
 		3A9F1C011CD35E19000A1475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1BFF1CD35E19000A1475 /* LaunchScreen.storyboard */; };
 		3A9F1C0C1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C0B1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift */; };
 		3A9F1C171CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */; };
+		3A9F1C251CD3676E000A1475 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C241CD3676E000A1475 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		3A9F1BF31CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap_P3_iOS_NanoDegree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3A9F1BF81CD35E19000A1475 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3A9F1BFB1CD35E19000A1475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9F1C001CD35E19000A1475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		3A9F1C121CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMap_P3_iOS_NanoDegreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMap_P3_iOS_NanoDegreeUITests.swift; sourceTree = "<group>"; };
 		3A9F1C181CD35E19000A1475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9F1C241CD3676E000A1475 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = OnTheMap_P3_iOS_NanoDegree/ViewController/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,9 @@
 		3A9F1BF51CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */ = {
 			isa = PBXGroup;
 			children = (
+				3A9F1C261CD367E0000A1475 /* ViewController */,
+				3A9F1C271CD36F51000A1475 /* Model */,
 				3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */,
-				3A9F1BF81CD35E19000A1475 /* ViewController.swift */,
 				3A9F1BFA1CD35E19000A1475 /* Main.storyboard */,
 				3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */,
 				3A9F1BFF1CD35E19000A1475 /* LaunchScreen.storyboard */,
@@ -123,6 +124,37 @@
 				3A9F1C181CD35E19000A1475 /* Info.plist */,
 			);
 			path = OnTheMap_P3_iOS_NanoDegreeUITests;
+			sourceTree = "<group>";
+		};
+		3A9F1C261CD367E0000A1475 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1C241CD3676E000A1475 /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3A9F1C271CD36F51000A1475 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1C291CD3708D000A1475 /* Clients */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3A9F1C281CD36F9B000A1475 /* Udacity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Udacity;
+			sourceTree = "<group>";
+		};
+		3A9F1C291CD3708D000A1475 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1C281CD36F9B000A1475 /* Udacity */,
+			);
+			name = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A9F1BF91CD35E19000A1475 /* ViewController.swift in Sources */,
+				3A9F1C251CD3676E000A1475 /* LoginViewController.swift in Sources */,
 				3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
