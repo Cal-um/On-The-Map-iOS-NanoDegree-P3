@@ -10,6 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
   
+  // MARK: Life cycle and properties
+  
+  
+  
+  
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
