@@ -14,6 +14,9 @@
 		3A9F1C0C1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C0B1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift */; };
 		3A9F1C171CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */; };
 		3A9F1C251CD3676E000A1475 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C241CD3676E000A1475 /* LoginViewController.swift */; };
+		3A9F1C2B1CD37674000A1475 /* TabBarMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C2A1CD37674000A1475 /* TabBarMapViewController.swift */; };
+		3A9F1C2D1CD376A8000A1475 /* TabBarListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C2C1CD376A8000A1475 /* TabBarListTableViewController.swift */; };
+		3A9F1C2F1CD381EA000A1475 /* InfoPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C2E1CD381EA000A1475 /* InfoPostingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMap_P3_iOS_NanoDegreeUITests.swift; sourceTree = "<group>"; };
 		3A9F1C181CD35E19000A1475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A9F1C241CD3676E000A1475 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = OnTheMap_P3_iOS_NanoDegree/ViewController/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		3A9F1C2A1CD37674000A1475 /* TabBarMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarMapViewController.swift; sourceTree = "<group>"; };
+		3A9F1C2C1CD376A8000A1475 /* TabBarListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarListTableViewController.swift; sourceTree = "<group>"; };
+		3A9F1C2E1CD381EA000A1475 /* InfoPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				3A9F1C241CD3676E000A1475 /* LoginViewController.swift */,
+				3A9F1C2A1CD37674000A1475 /* TabBarMapViewController.swift */,
+				3A9F1C2C1CD376A8000A1475 /* TabBarListTableViewController.swift */,
+				3A9F1C2E1CD381EA000A1475 /* InfoPostingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -288,7 +297,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A9F1C2D1CD376A8000A1475 /* TabBarListTableViewController.swift in Sources */,
+				3A9F1C2B1CD37674000A1475 /* TabBarMapViewController.swift in Sources */,
 				3A9F1C251CD3676E000A1475 /* LoginViewController.swift in Sources */,
+				3A9F1C2F1CD381EA000A1475 /* InfoPostingViewController.swift in Sources */,
 				3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
