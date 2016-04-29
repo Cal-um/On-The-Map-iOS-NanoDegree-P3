@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>OnTheMap_P3_iOS_NanoDegree.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3A9F1BF21CD35E19000A1475</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A9F1C061CD35E19000A1475</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3A9F1C111CD35E19000A1475</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

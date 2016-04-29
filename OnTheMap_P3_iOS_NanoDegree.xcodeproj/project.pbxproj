@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */; };
+		3A9F1BF91CD35E19000A1475 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1BF81CD35E19000A1475 /* ViewController.swift */; };
+		3A9F1BFC1CD35E19000A1475 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1BFA1CD35E19000A1475 /* Main.storyboard */; };
+		3A9F1BFE1CD35E19000A1475 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */; };
+		3A9F1C011CD35E19000A1475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1BFF1CD35E19000A1475 /* LaunchScreen.storyboard */; };
+		3A9F1C0C1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C0B1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift */; };
+		3A9F1C171CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3A9F1C081CD35E19000A1475 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A9F1BEB1CD35E19000A1475 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A9F1BF21CD35E19000A1475;
+			remoteInfo = OnTheMap_P3_iOS_NanoDegree;
+		};
+		3A9F1C131CD35E19000A1475 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A9F1BEB1CD35E19000A1475 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A9F1BF21CD35E19000A1475;
+			remoteInfo = OnTheMap_P3_iOS_NanoDegree;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A9F1BF31CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheMap_P3_iOS_NanoDegree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A9F1BF81CD35E19000A1475 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A9F1BFB1CD35E19000A1475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A9F1C001CD35E19000A1475 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A9F1C021CD35E19000A1475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9F1C071CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMap_P3_iOS_NanoDegreeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9F1C0B1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMap_P3_iOS_NanoDegreeTests.swift; sourceTree = "<group>"; };
+		3A9F1C0D1CD35E19000A1475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9F1C121CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMap_P3_iOS_NanoDegreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMap_P3_iOS_NanoDegreeUITests.swift; sourceTree = "<group>"; };
+		3A9F1C181CD35E19000A1475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A9F1BF01CD35E19000A1475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9F1C041CD35E19000A1475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9F1C0F1CD35E19000A1475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A9F1BEA1CD35E19000A1475 = {
+			isa = PBXGroup;
+			children = (
+				3A9F1BF51CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */,
+				3A9F1C0A1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests */,
+				3A9F1C151CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests */,
+				3A9F1BF41CD35E19000A1475 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A9F1BF41CD35E19000A1475 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1BF31CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree.app */,
+				3A9F1C071CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.xctest */,
+				3A9F1C121CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A9F1BF51CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */,
+				3A9F1BF81CD35E19000A1475 /* ViewController.swift */,
+				3A9F1BFA1CD35E19000A1475 /* Main.storyboard */,
+				3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */,
+				3A9F1BFF1CD35E19000A1475 /* LaunchScreen.storyboard */,
+				3A9F1C021CD35E19000A1475 /* Info.plist */,
+			);
+			path = OnTheMap_P3_iOS_NanoDegree;
+			sourceTree = "<group>";
+		};
+		3A9F1C0A1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1C0B1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift */,
+				3A9F1C0D1CD35E19000A1475 /* Info.plist */,
+			);
+			path = OnTheMap_P3_iOS_NanoDegreeTests;
+			sourceTree = "<group>";
+		};
+		3A9F1C151CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3A9F1C161CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift */,
+				3A9F1C181CD35E19000A1475 /* Info.plist */,
+			);
+			path = OnTheMap_P3_iOS_NanoDegreeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A9F1BF21CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9F1C1B1CD35E19000A1475 /* Build configuration list for PBXNativeTarget "OnTheMap_P3_iOS_NanoDegree" */;
+			buildPhases = (
+				3A9F1BEF1CD35E19000A1475 /* Sources */,
+				3A9F1BF01CD35E19000A1475 /* Frameworks */,
+				3A9F1BF11CD35E19000A1475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OnTheMap_P3_iOS_NanoDegree;
+			productName = OnTheMap_P3_iOS_NanoDegree;
+			productReference = 3A9F1BF31CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A9F1C061CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9F1C1E1CD35E19000A1475 /* Build configuration list for PBXNativeTarget "OnTheMap_P3_iOS_NanoDegreeTests" */;
+			buildPhases = (
+				3A9F1C031CD35E19000A1475 /* Sources */,
+				3A9F1C041CD35E19000A1475 /* Frameworks */,
+				3A9F1C051CD35E19000A1475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A9F1C091CD35E19000A1475 /* PBXTargetDependency */,
+			);
+			name = OnTheMap_P3_iOS_NanoDegreeTests;
+			productName = OnTheMap_P3_iOS_NanoDegreeTests;
+			productReference = 3A9F1C071CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3A9F1C111CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A9F1C211CD35E19000A1475 /* Build configuration list for PBXNativeTarget "OnTheMap_P3_iOS_NanoDegreeUITests" */;
+			buildPhases = (
+				3A9F1C0E1CD35E19000A1475 /* Sources */,
+				3A9F1C0F1CD35E19000A1475 /* Frameworks */,
+				3A9F1C101CD35E19000A1475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3A9F1C141CD35E19000A1475 /* PBXTargetDependency */,
+			);
+			name = OnTheMap_P3_iOS_NanoDegreeUITests;
+			productName = OnTheMap_P3_iOS_NanoDegreeUITests;
+			productReference = 3A9F1C121CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A9F1BEB1CD35E19000A1475 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Calum Harris";
+				TargetAttributes = {
+					3A9F1BF21CD35E19000A1475 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					3A9F1C061CD35E19000A1475 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3A9F1BF21CD35E19000A1475;
+					};
+					3A9F1C111CD35E19000A1475 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 3A9F1BF21CD35E19000A1475;
+					};
+				};
+			};
+			buildConfigurationList = 3A9F1BEE1CD35E19000A1475 /* Build configuration list for PBXProject "OnTheMap_P3_iOS_NanoDegree" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A9F1BEA1CD35E19000A1475;
+			productRefGroup = 3A9F1BF41CD35E19000A1475 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A9F1BF21CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */,
+				3A9F1C061CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests */,
+				3A9F1C111CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A9F1BF11CD35E19000A1475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9F1C011CD35E19000A1475 /* LaunchScreen.storyboard in Resources */,
+				3A9F1BFE1CD35E19000A1475 /* Assets.xcassets in Resources */,
+				3A9F1BFC1CD35E19000A1475 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9F1C051CD35E19000A1475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9F1C101CD35E19000A1475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A9F1BEF1CD35E19000A1475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9F1BF91CD35E19000A1475 /* ViewController.swift in Sources */,
+				3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9F1C031CD35E19000A1475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9F1C0C1CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A9F1C0E1CD35E19000A1475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A9F1C171CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegreeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A9F1C091CD35E19000A1475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A9F1BF21CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */;
+			targetProxy = 3A9F1C081CD35E19000A1475 /* PBXContainerItemProxy */;
+		};
+		3A9F1C141CD35E19000A1475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A9F1BF21CD35E19000A1475 /* OnTheMap_P3_iOS_NanoDegree */;
+			targetProxy = 3A9F1C131CD35E19000A1475 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3A9F1BFA1CD35E19000A1475 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A9F1BFB1CD35E19000A1475 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A9F1BFF1CD35E19000A1475 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A9F1C001CD35E19000A1475 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A9F1C191CD35E19000A1475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A9F1C1A1CD35E19000A1475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A9F1C1C1CD35E19000A1475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OnTheMap_P3_iOS_NanoDegree/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renaldomoon.OnTheMap-P3-iOS-NanoDegree";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3A9F1C1D1CD35E19000A1475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OnTheMap_P3_iOS_NanoDegree/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renaldomoon.OnTheMap-P3-iOS-NanoDegree";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3A9F1C1F1CD35E19000A1475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OnTheMap_P3_iOS_NanoDegreeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renaldomoon.OnTheMap-P3-iOS-NanoDegreeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTheMap_P3_iOS_NanoDegree.app/OnTheMap_P3_iOS_NanoDegree";
+			};
+			name = Debug;
+		};
+		3A9F1C201CD35E19000A1475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OnTheMap_P3_iOS_NanoDegreeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renaldomoon.OnTheMap-P3-iOS-NanoDegreeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTheMap_P3_iOS_NanoDegree.app/OnTheMap_P3_iOS_NanoDegree";
+			};
+			name = Release;
+		};
+		3A9F1C221CD35E19000A1475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OnTheMap_P3_iOS_NanoDegreeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renaldomoon.OnTheMap-P3-iOS-NanoDegreeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OnTheMap_P3_iOS_NanoDegree;
+			};
+			name = Debug;
+		};
+		3A9F1C231CD35E19000A1475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OnTheMap_P3_iOS_NanoDegreeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.renaldomoon.OnTheMap-P3-iOS-NanoDegreeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OnTheMap_P3_iOS_NanoDegree;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A9F1BEE1CD35E19000A1475 /* Build configuration list for PBXProject "OnTheMap_P3_iOS_NanoDegree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9F1C191CD35E19000A1475 /* Debug */,
+				3A9F1C1A1CD35E19000A1475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A9F1C1B1CD35E19000A1475 /* Build configuration list for PBXNativeTarget "OnTheMap_P3_iOS_NanoDegree" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9F1C1C1CD35E19000A1475 /* Debug */,
+				3A9F1C1D1CD35E19000A1475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A9F1C1E1CD35E19000A1475 /* Build configuration list for PBXNativeTarget "OnTheMap_P3_iOS_NanoDegreeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9F1C1F1CD35E19000A1475 /* Debug */,
+				3A9F1C201CD35E19000A1475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3A9F1C211CD35E19000A1475 /* Build configuration list for PBXNativeTarget "OnTheMap_P3_iOS_NanoDegreeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A9F1C221CD35E19000A1475 /* Debug */,
+				3A9F1C231CD35E19000A1475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A9F1BEB1CD35E19000A1475 /* Project object */;
+}
