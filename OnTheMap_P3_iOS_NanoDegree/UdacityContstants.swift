@@ -24,10 +24,18 @@ struct UdacityConstants {
     
   }
   
-  struct parameterKeys {
+  struct ParameterKeys {
     
-    static let username = "username"
-    static let password = "password"
+    static let Username = "username"
+    static let Password = "password"
+  }
+  
+  struct JSONResponseKeys {
+    
+    static let UserID = "key"
+    static let firstName = "first_name"
+    static let lastName = "last_name"
+    
   }
   
 }

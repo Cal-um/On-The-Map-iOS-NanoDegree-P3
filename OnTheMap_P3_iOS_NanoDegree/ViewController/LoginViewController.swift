@@ -22,4 +22,12 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var signUpButton: UIButton!
   
   
+  func errorInTextfield() {
+    let ac = UIAlertController(title: "Error", message: "Please enter Username and Password", preferredStyle: .Alert)
+    ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
+    presentViewController(ac, animated: true, completion: nil)
+    
+  }
+  
+  
 }
