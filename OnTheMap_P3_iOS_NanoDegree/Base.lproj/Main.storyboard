@@ -45,6 +45,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fi-qb-VK1">
                                                 <rect key="frame" x="0.0" y="76" width="560" height="30"/>
                                                 <state key="normal" title="Login"/>
+                                                <connections>
+                                                    <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="509-DU-zL8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -60,6 +63,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HS-AK-eNy">
                                                 <rect key="frame" x="434" y="-4" width="126" height="30"/>
                                                 <state key="normal" title="Sign up"/>
+                                                <connections>
+                                                    <action selector="signUpButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HMS-sc-TOo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

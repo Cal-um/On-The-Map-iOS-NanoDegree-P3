@@ -8,11 +8,12 @@
 
 import Foundation
 
+// This struct is used to store and pass around login user information.
+
 struct UserModel {
   
   let userID: String
   let firstName: String
   let lastName: String
-  
   
 }

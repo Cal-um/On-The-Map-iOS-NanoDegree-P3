@@ -22,6 +22,26 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var signUpButton: UIButton!
   
   
+  
+  @IBAction func loginButtonPressed(sender: AnyObject) {
+    
+    
+    
+    
+    
+    
+  }
+  
+  
+  @IBAction func signUpButtonPressed(sender: AnyObject) {
+    
+    UIApplication.sharedApplication().openURL(NSURL(string: "https://www.udacity.com/account/auth#!/signup")!)
+    
+    
+    
+  }
+  
+  
   func errorInTextfield() {
     let ac = UIAlertController(title: "Error", message: "Please enter Username and Password", preferredStyle: .Alert)
     ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
