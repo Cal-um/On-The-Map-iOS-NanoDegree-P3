@@ -14,6 +14,7 @@ struct UdacityConstants {
   static let APIScheme = "https"
   static let APIHost = "www.udacity.com"
   static let APIPath = "/api"
+  static let UdacitySignUpURL = "https://www.udacity.com/account/auth#!/signup"
   
   struct Methods {
     

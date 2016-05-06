@@ -12,22 +12,14 @@ class LoginViewController: UIViewController {
   
   // MARK: Life cycle and properties
   
-  
-  
-  
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var signUpButton: UIButton!
   
-  
-  
   @IBAction func loginButtonPressed(sender: AnyObject) {
-    
-    
-    
-    
+  
     
     
   }
@@ -35,14 +27,15 @@ class LoginViewController: UIViewController {
   
   @IBAction func signUpButtonPressed(sender: AnyObject) {
     
-    UIApplication.sharedApplication().openURL(NSURL(string: "https://www.udacity.com/account/auth#!/signup")!)
-    
-    
-    
+    if let url = NSURL(string: UdacityConstants.UdacitySignUpURL) {
+      
+      UIApplication.sharedApplication().openURL(url)
+    }
   }
   
   
   func errorInTextfield() {
+    
     let ac = UIAlertController(title: "Error", message: "Please enter Username and Password", preferredStyle: .Alert)
     ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
     presentViewController(ac, animated: true, completion: nil)
