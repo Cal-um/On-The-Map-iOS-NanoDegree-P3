@@ -14,11 +14,16 @@ struct UdacityConstants {
   static let APIScheme = "https"
   static let APIHost = "www.udacity.com"
   static let APIPath = "/api"
+
   static let UdacitySignUpURL = "https://www.udacity.com/account/auth#!/signup"
   
+  // URLActions
+  static let login = "/session"
+  static let logout = "/session"
+  static let loginGetUserData = "/users"
+
   struct Methods {
     
-    static let StartSession = "/session"
     static let Post = "POST"
     static let delete = "DELETE"
     static let addValueJson = "application/json"
