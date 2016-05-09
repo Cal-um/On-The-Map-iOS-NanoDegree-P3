@@ -20,6 +20,14 @@ class LoginViewController: UIViewController {
   
   @IBAction func loginButtonPressed(sender: AnyObject) {
   
+    guard let email = emailTextField.text, password = passwordTextField.text where email != "" && password != "" else {
+      errorInTextfield()
+      return
+    }
+    print("got this far")
+    
+  UdacityClient().loginToUdacity(email, password: password)
+    
     
     
   }

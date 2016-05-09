@@ -8,3 +8,29 @@
 
 import Foundation
 
+extension UdacityClient {
+  
+   func loginToUdacity(userName: String, password: String)  {
+    
+    print("meow")
+    
+    let jsonBody = "{\"udacity\": {\"username\": \"\(userName)\", \"password\": \"\(password)\"}}"
+    
+    taskForPost(UdacityConstants.login, jsonBody: jsonBody) { (result) -> Void in
+      
+      switch (result) {
+      case let .Success(data):
+      print("meow1")
+      print(data)
+      case let .Failure(error):
+        print("moot")
+      print(String(error))
+      break
+      }
+    }
+  }
+  
+
+  
+  
+}
