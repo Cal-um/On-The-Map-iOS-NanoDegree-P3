@@ -20,18 +20,29 @@ class LoginViewController: UIViewController {
   
   @IBAction func loginButtonPressed(sender: AnyObject) {
   
+    
+    
+    var userData: UserModel?
+    
+    
     guard let email = emailTextField.text, password = passwordTextField.text where email != "" && password != "" else {
       errorInTextfield()
       return
     }
     print("got this far")
     
-  UdacityClient().loginToUdacity(email, password: password)
-    
-    
+    UdacityClient().authenticateWithLoginAndReturnUserModel(email, password: password) { LoginResult in
+      performUIUpdatesOnMain {
+      
+        if case let .Success(result) = LoginResult {
+          
+          print(result.userKey)
+        }
+      
+      }
+    }
     
   }
-  
   
   @IBAction func signUpButtonPressed(sender: AnyObject) {
     

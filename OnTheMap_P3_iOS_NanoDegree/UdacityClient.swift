@@ -11,9 +11,17 @@ import Foundation
 // Define completion handler typalias and Result enum for use throughout Authentication.
 
 typealias AuthenticationCompletionHandler = (Result) -> Void
+typealias CompletionHandlerForLogin = (LoginResult) -> Void
 
 enum Result {
   case Success(AnyObject?)
+  case Failure(ErrorType)
+  
+}
+
+enum LoginResult {
+  
+  case Success(UserModel)
   case Failure(ErrorType)
   
 }
@@ -22,7 +30,7 @@ struct UdacityClient {
 
 
   
-  func taskForPost(action: String, jsonBody: String, completionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
+  func taskForPost(action: String, jsonBody: String, postCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
     
     let session = NSURLSession.sharedSession()
     
@@ -41,7 +49,7 @@ struct UdacityClient {
       func sendError(error: String) {
         print(error)
         let userInfo = [NSLocalizedDescriptionKey : error]
-        completionHandler(.Failure(NSError(domain: "taskForPOST", code: 1, userInfo: userInfo)))
+        postCompletionHandler(.Failure(NSError(domain: "taskForPOST", code: 1, userInfo: userInfo)))
       }
 print("2")
       
@@ -64,9 +72,9 @@ print("2")
       }
       
       // Parse the data and use the data (Happens in the completion handler)
-      self.convertDataWithCompletionHander(data, completionHandler: completionHandler)
+      self.convertDataWithCompletionHander(data, completionHandler: postCompletionHandler)
     
-    
+    print("3")
     }
     task.resume()
     return task
@@ -76,23 +84,60 @@ print("2")
     
     var parsedResult: AnyObject!
     do {
-      parsedResult = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+      
+      let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
+      
+      parsedResult = try NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)
     } catch {
       
       let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
       completionHandler(.Failure(NSError(domain: "convertDataWithCompletionHander", code: 1, userInfo: userInfo)))
     }
-    
+    print("4")
     completionHandler(.Success(parsedResult))
   
   }
   
+  
+   func getUserKeyAndReturnUserModel(jsonData: Result, getUserKeyCompletionHander: CompletionHandlerForLogin) {
+    print("5")
+    if case let .Success(jsonData) = jsonData {
+    print("here")
+      
+      
+      guard let accountDetail = jsonData?[UdacityConstants.JSONResponseKeys.AccountDetail] as? [String : AnyObject] else {
+        print("error")
+        let userInfo = [NSLocalizedDescriptionKey : "accountDetail not found"]
+        getUserKeyCompletionHander(.Failure(NSError(domain: "getUserKey", code: 1, userInfo: userInfo)))
+        return
+      }
+
+      
+      guard let userKey = accountDetail[UdacityConstants.JSONResponseKeys.UserKey] as? String else {
+        print("error")
+        let userInfo = [NSLocalizedDescriptionKey : "UserKey not found"]
+        getUserKeyCompletionHander(.Failure(NSError(domain: "getUserKey", code: 1, userInfo: userInfo)))
+        return
+      }
+      print("6")
+      var userModel = UserModel()
+      userModel.userKey = userKey
+      
+      getUserKeyCompletionHander(.Success(userModel))
+      
+    }
+  }
+  
+
+  
   private func URLFromAction(action: String, additionalParameter: String? = nil) -> NSURL {
+    
     
     let components = NSURLComponents()
     components.scheme = UdacityConstants.APIScheme
     components.host = UdacityConstants.APIHost
-    components.path = UdacityConstants.APIPath + action + "/" + (additionalParameter ?? "")
+    components.path = UdacityConstants.APIPath + action + (additionalParameter ?? "")
+  
     print(components.URL!)
     
     return components.URL!

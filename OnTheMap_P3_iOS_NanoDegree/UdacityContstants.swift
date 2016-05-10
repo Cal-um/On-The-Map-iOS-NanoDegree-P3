@@ -38,9 +38,10 @@ struct UdacityConstants {
   
   struct JSONResponseKeys {
     
-    static let UserID = "key"
-    static let firstName = "first_name"
-    static let lastName = "last_name"
+    static let AccountDetail = "account"
+    static let UserKey = "key"
+    static let FirstName = "first_name"
+    static let LastName = "last_name"
     
   }
   

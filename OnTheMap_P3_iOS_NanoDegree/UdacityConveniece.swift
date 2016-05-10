@@ -10,27 +10,32 @@ import Foundation
 
 extension UdacityClient {
   
-   func loginToUdacity(userName: String, password: String)  {
+  func authenticateWithLoginAndReturnUserModel(userName: String, password: String, completionHandlerForAuthenticateWithLogin: CompletionHandlerForLogin)  {
     
     print("meow")
     
     let jsonBody = "{\"udacity\": {\"username\": \"\(userName)\", \"password\": \"\(password)\"}}"
     
     taskForPost(UdacityConstants.login, jsonBody: jsonBody) { (result) -> Void in
+    
+      switch result {
+      case let .Success(results):
+        self.getUserKeyAndReturnUserModel(.Success(results)) { (userKey) -> Void in
+        
+          completionHandlerForAuthenticateWithLogin(userKey)
       
-      switch (result) {
-      case let .Success(data):
-      print("meow1")
-      print(data)
-      case let .Failure(error):
-        print("moot")
-      print(String(error))
+        }
+      case .Failure:
       break
+        
       }
+      
     }
+    
+    
+    
+    
   }
-  
-
   
   
 }

@@ -12,8 +12,8 @@ import Foundation
 
 struct UserModel {
   
-  let userID: String
-  let firstName: String
-  let lastName: String
+  var userKey: String = ""
+  var firstName: String = ""
+  var lastName: String = ""
   
 }
