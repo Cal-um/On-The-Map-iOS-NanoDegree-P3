@@ -208,6 +208,32 @@ struct UdacityClient {
     
   }
   
+  func taskForDelete(action: String, taskForDeleteCompletionHandler: AuthenticationCompletionHandler) {
+    
+    let session = NSURLSession.sharedSession()
+    let request = NSMutableURLRequest(URL: URLFromAction(action))
+    request.HTTPMethod = "DELETE"
+    
+    var xsrfCookie: NSHTTPCookie? = nil
+    let sharedCookieStorage = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+    for cookie in sharedCookieStorage.cookies! {
+      if cookie.name == "XSRF-TOKEN" { xsrfCookie = cookie }
+    }
+    if let xsrfCookie = xsrfCookie {
+      request.setValue(xsrfCookie.value, forHTTPHeaderField: "X-XSRF-TOKEN")
+    }
+    
+    let task = session.dataTaskWithRequest(request) { data, response, error in
+      
+      if error != nil {
+        taskForDeleteCompletionHandler(.Success("logout"))
+      } else {
+        taskForDeleteCompletionHandler(.Failure(error!))
+      }
+    }
+    task.resume()
+  }
+  
   private func URLFromAction(action: String, additionalParameter: String? = nil) -> NSURL {
     
     
