@@ -8,12 +8,13 @@
 
 import Foundation
 
-// Define completion handler typalias and Result enum for use throughout Authentication.
+
 
 
 
 struct UdacityClient {
 
+  // Define completion handler typalias and Result enum for use throughout Authentication.
   
   typealias AuthenticationCompletionHandler = (Result) -> Void
   typealias CompletionHandlerForLogin = (LoginResult) -> Void
@@ -34,7 +35,7 @@ struct UdacityClient {
   }
 
   
-  func taskForPost(action: String, jsonBody: String, postCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
+   func taskForPost(action: String, jsonBody: String, postCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
     
     let session = NSURLSession.sharedSession()
     
@@ -44,18 +45,17 @@ struct UdacityClient {
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
-    print("1")
+   
     
     // make request
     
     let task = session.dataTaskWithRequest(request) {(data, response, error) in
       
       func sendError(error: String) {
-        print(error)
         let userInfo = [NSLocalizedDescriptionKey : error]
         postCompletionHandler(.Failure(NSError(domain: "taskForPOST", code: 1, userInfo: userInfo)))
       }
-print("2")
+
       
       // GUARD: Was there an error
       guard (error == nil) else {
@@ -78,7 +78,7 @@ print("2")
       // Parse the data and use the data (Happens in the completion handler)
       self.convertDataWithCompletionHander(data, completionHandler: postCompletionHandler)
     
-    print("3")
+    
     }
     task.resume()
     return task
@@ -97,18 +97,16 @@ print("2")
       let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
       completionHandler(.Failure(NSError(domain: "convertDataWithCompletionHander", code: 1, userInfo: userInfo)))
     }
-    print("4")
+    
     completionHandler(.Success(parsedResult))
   
   }
   
   
-   func getUserKeyAndReturnUserModel(jsonData: Result, getUserKeyCompletionHander: CompletionHandlerForLogin) {
-    print("5")
+    func getUserKeyAndReturnUserModel(jsonData: Result, getUserKeyCompletionHander: CompletionHandlerForLogin) {
+    
     if case let .Success(jsonData) = jsonData {
-    print("here")
-      
-      
+    
       guard let accountDetail = jsonData?[UdacityConstants.JSONResponseKeys.AccountDetail] as? [String : AnyObject] else {
         print("error")
         let userInfo = [NSLocalizedDescriptionKey : "accountDetail not found"]
@@ -116,17 +114,15 @@ print("2")
         return
       }
 
-      
       guard let userKey = accountDetail[UdacityConstants.JSONResponseKeys.UserKey] as? String else {
         print("error")
         let userInfo = [NSLocalizedDescriptionKey : "UserKey not found"]
         getUserKeyCompletionHander(.Failure(NSError(domain: "getUserKey", code: 1, userInfo: userInfo)))
         return
       }
-      print("6")
+      
       var userModel = UserModel()
       userModel.userKey = userKey
-      
       getUserKeyCompletionHander(.Success(userModel))
       
     }
@@ -134,7 +130,7 @@ print("2")
   
 
   
-  func taskForGet(action: String, additionalParameter: String, getCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
+   func taskForGet(action: String, additionalParameter: String, getCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
     
     let session = NSURLSession.sharedSession()
     
@@ -150,7 +146,6 @@ print("2")
         let userInfo = [NSLocalizedDescriptionKey : error]
         getCompletionHandler(.Failure(NSError(domain: "taskForGET", code: 1, userInfo: userInfo)))
       }
-      print("2")
       
       // GUARD: Was there an error
       guard (error == nil) else {
@@ -173,14 +168,13 @@ print("2")
       // Parse the data and use the data (Happens in the completion handler)
       self.convertDataWithCompletionHander(data, completionHandler: getCompletionHandler)
       
-      print("3")
     }
     task.resume()
     return task
   }
 
   
-  func returnUserModelFullyPopulated(userModelWithKey: UserModel, jsonData: Result, returnUserModelCompletionHandler: CompletionHandlerForLogin) {
+   func returnUserModelFullyPopulated(userModelWithKey: UserModel, jsonData: Result, returnUserModelCompletionHandler: CompletionHandlerForLogin) {
     
     switch jsonData {
     case let .Success(json):
@@ -210,8 +204,6 @@ print("2")
     case let .Failure(error):
       returnUserModelCompletionHandler(.Failure(error))
     }
-    
-    
     
     
   }
