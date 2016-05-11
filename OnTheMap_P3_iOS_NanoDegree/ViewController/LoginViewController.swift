@@ -21,16 +21,11 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var signUpButton: UIButton!
   
-  
+  //TODO: limit the email text field to email only for exaple only enable the login button when an email address is added.
   
   
   @IBAction func loginButtonPressed(sender: AnyObject) {
   
-    
-    
-   
-    
-    
     guard let email = emailTextField.text, password = passwordTextField.text where email != "" && password != "" else {
       errorInTextfield()
       return
@@ -38,6 +33,8 @@ class LoginViewController: UIViewController {
     print("got this far")
     
     UdacityClient().authenticateWithLoginAndReturnUserModel(email, password: password) { LoginResult in
+      
+      // TODO: Add spinning wheel and disable UI while connection is made to server, then disable spinning wheel and renable UI when complete.
       performUIUpdatesOnMain {
       
         switch LoginResult {
@@ -49,6 +46,9 @@ class LoginViewController: UIViewController {
             self.userData = result
             self.performSegueWithIdentifier("loginSuccess", sender: nil)
         
+          
+        // TODO: Add better error handling e.g. when incorrect details are entered, let the user know this, or no network connection.
+          
         case let .Failure(error):
           print(error)
         }
