@@ -22,6 +22,7 @@
 		3A9F1C2F1CD381EA000A1475 /* InfoPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C2E1CD381EA000A1475 /* InfoPostingViewController.swift */; };
 		3A9F1C311CD3969D000A1475 /* UdacityContstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C301CD3969D000A1475 /* UdacityContstants.swift */; };
 		3A9F1C331CD7A358000A1475 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1C321CD7A358000A1475 /* UserModel.swift */; };
+		3AF78C621CE345E70033D154 /* MapAndListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C611CE345E70033D154 /* MapAndListTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		3A9F1C2E1CD381EA000A1475 /* InfoPostingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPostingViewController.swift; sourceTree = "<group>"; };
 		3A9F1C301CD3969D000A1475 /* UdacityContstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityContstants.swift; sourceTree = "<group>"; };
 		3A9F1C321CD7A358000A1475 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		3AF78C611CE345E70033D154 /* MapAndListTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAndListTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9F1C241CD3676E000A1475 /* LoginViewController.swift */,
+				3AF78C611CE345E70033D154 /* MapAndListTabBarController.swift */,
 				3A9F1C2A1CD37674000A1475 /* TabBarMapViewController.swift */,
 				3A9F1C2C1CD376A8000A1475 /* TabBarListTableViewController.swift */,
 				3A9F1C2E1CD381EA000A1475 /* InfoPostingViewController.swift */,
@@ -321,6 +324,7 @@
 				3A9F1C251CD3676E000A1475 /* LoginViewController.swift in Sources */,
 				3A5A5CC01CDBAC6A004D8CE4 /* GCDMainQueue.swift in Sources */,
 				3A9F1C2F1CD381EA000A1475 /* InfoPostingViewController.swift in Sources */,
+				3AF78C621CE345E70033D154 /* MapAndListTabBarController.swift in Sources */,
 				3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

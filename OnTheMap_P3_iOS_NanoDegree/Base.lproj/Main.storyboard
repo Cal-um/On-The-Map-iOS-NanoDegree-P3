@@ -85,6 +85,7 @@
                         <outlet property="loginButton" destination="7Fi-qb-VK1" id="O2l-GB-LcN"/>
                         <outlet property="passwordTextField" destination="gLK-6y-nef" id="0P1-jD-ajf"/>
                         <outlet property="signUpButton" destination="6HS-AK-eNy" id="aT6-XR-xMj"/>
+                        <segue destination="Cmi-AI-jJX" kind="presentation" identifier="loginSuccess" id="ozI-9K-4N1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="2767" y="5"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Map And List Tab Bar Controller-->
         <scene sceneID="Fgo-LL-tIU">
             <objects>
-                <tabBarController id="Cmi-AI-jJX" sceneMemberID="viewController">
+                <tabBarController id="Cmi-AI-jJX" customClass="MapAndListTabBarController" customModule="OnTheMap_P3_iOS_NanoDegree" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lx6-iK-vQ2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -10,24 +10,28 @@ import Foundation
 
 // Define completion handler typalias and Result enum for use throughout Authentication.
 
-typealias AuthenticationCompletionHandler = (Result) -> Void
-typealias CompletionHandlerForLogin = (LoginResult) -> Void
 
-enum Result {
-  case Success(AnyObject?)
-  case Failure(ErrorType)
-  
-}
-
-enum LoginResult {
-  
-  case Success(UserModel)
-  case Failure(ErrorType)
-  
-}
 
 struct UdacityClient {
 
+  
+  typealias AuthenticationCompletionHandler = (Result) -> Void
+  typealias CompletionHandlerForLogin = (LoginResult) -> Void
+
+
+  enum Result {
+    case Success(AnyObject?)
+    case Failure(ErrorType)
+    
+  }
+  
+  
+  enum LoginResult {
+  
+    case Success(UserModel)
+    case Failure(ErrorType)
+  
+  }
 
   
   func taskForPost(action: String, jsonBody: String, postCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
@@ -129,6 +133,88 @@ print("2")
   }
   
 
+  
+  func taskForGet(action: String, additionalParameter: String, getCompletionHandler: AuthenticationCompletionHandler) -> NSURLSessionDataTask {
+    
+    let session = NSURLSession.sharedSession()
+    
+    // Build URL and configure the request
+    let request = NSMutableURLRequest(URL: URLFromAction(action, additionalParameter: additionalParameter))
+    
+    // make request
+    
+    let task = session.dataTaskWithRequest(request) {(data, response, error) in
+      
+      func sendError(error: String) {
+        print(error)
+        let userInfo = [NSLocalizedDescriptionKey : error]
+        getCompletionHandler(.Failure(NSError(domain: "taskForGET", code: 1, userInfo: userInfo)))
+      }
+      print("2")
+      
+      // GUARD: Was there an error
+      guard (error == nil) else {
+        sendError("There was an error with your request \(error)")
+        return
+      }
+      
+      // GUARD: Did we get a successful 2XX response
+      guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+        sendError("Your request returned a status code other than 2xx" + String(response))
+        return
+      }
+      
+      // GUARD: Was there any data returned?
+      guard let data = data else {
+        sendError("No data was returned by your request")
+        return
+      }
+      
+      // Parse the data and use the data (Happens in the completion handler)
+      self.convertDataWithCompletionHander(data, completionHandler: getCompletionHandler)
+      
+      print("3")
+    }
+    task.resume()
+    return task
+  }
+
+  
+  func returnUserModelFullyPopulated(userModelWithKey: UserModel, jsonData: Result, returnUserModelCompletionHandler: CompletionHandlerForLogin) {
+    
+    switch jsonData {
+    case let .Success(json):
+      
+      guard let userDetails = json?[UdacityConstants.JSONResponseKeys.UserDetails] as? [String : AnyObject] else {
+        print("error")
+        let userInfo = [NSLocalizedDescriptionKey : "userDetail not found"]
+        returnUserModelCompletionHandler(.Failure(NSError(domain: "getUserKey", code: 1, userInfo: userInfo)))
+        return
+      }
+      
+      
+      guard let firstName = userDetails[UdacityConstants.JSONResponseKeys.FirstName] as? String, lastName = userDetails[UdacityConstants.JSONResponseKeys.LastName] as? String else {
+        print("error")
+        let userInfo = [NSLocalizedDescriptionKey : "first name and/or last name not found"]
+        returnUserModelCompletionHandler(.Failure(NSError(domain: "getUserKey", code: 1, userInfo: userInfo)))
+        return
+      }
+
+      var populateUserModel = userModelWithKey
+      populateUserModel.firstName = firstName
+      populateUserModel.lastName = lastName
+      
+      returnUserModelCompletionHandler(.Success(populateUserModel))
+      
+      
+    case let .Failure(error):
+      returnUserModelCompletionHandler(.Failure(error))
+    }
+    
+    
+    
+    
+  }
   
   private func URLFromAction(action: String, additionalParameter: String? = nil) -> NSURL {
     
