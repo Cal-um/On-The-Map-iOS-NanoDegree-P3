@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
   
   // MARK: Life cycle and properties
   
@@ -21,16 +21,25 @@ class LoginViewController: UIViewController {
   @IBOutlet weak var loginButton: UIButton!
   @IBOutlet weak var signUpButton: UIButton!
   
-  //TODO: limit the email text field to email only for exaple only enable the login button when an email address is added.
+  @IBOutlet weak var loadingWheel: UIActivityIndicatorView!
   
+  override func viewDidLoad() {
+    emailTextField.delegate = self
+    passwordTextField.delegate = self
+  }
+  
+  
+  
+  // Actions
   
   @IBAction func loginButtonPressed(sender: AnyObject) {
   
     guard let email = emailTextField.text, password = passwordTextField.text where email != "" && password != "" else {
-      errorInTextfield()
+      loginErrorAlert("Empty Field")
       return
     }
-    print("got this far")
+    
+    enableUI(false)
     
     UdacityClient().authenticateWithLoginAndReturnUserModel(email, password: password) { LoginResult in
       
@@ -40,17 +49,18 @@ class LoginViewController: UIViewController {
         switch LoginResult {
           
         case let .Success(result):
-            print(result.userKey)
-            print(result.firstName)
-            print(result.lastName)
             self.userData = result
+            self.enableUI(true)
             self.performSegueWithIdentifier("loginSuccess", sender: nil)
         
           
         // TODO: Add better error handling e.g. when incorrect details are entered, let the user know this, or no network connection.
           
         case let .Failure(error):
-          print(error)
+          self.enableUI(true)
+          let errorMessage = error as NSError
+          print(errorMessage.localizedDescription)
+          self.loginErrorAlert(errorMessage.localizedDescription)
         }
       }
     }
@@ -68,9 +78,17 @@ class LoginViewController: UIViewController {
   }
   
   
-  func errorInTextfield() {
+  func loginErrorAlert(message: String) {
+    var alertMessage = ""
     
-    let ac = UIAlertController(title: "Error", message: "Please enter Username and Password", preferredStyle: .Alert)
+    switch message {
+    case "No Internet Connection": alertMessage = "No Internet Connection"
+    case "Invalid Login Details": alertMessage = "Incorrect Login Details"
+    case "Empty Field": alertMessage = "Please Enter Userame and Password"
+    default: alertMessage = "Something Went Wrong During Login, Please Try Again"
+    }
+    
+    let ac = UIAlertController(title: "Error", message: alertMessage, preferredStyle: .Alert)
     ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
     presentViewController(ac, animated: true, completion: nil)
     
@@ -85,6 +103,35 @@ class LoginViewController: UIViewController {
         destinationTabBarController.userData = userData
       }
     }
+  }
+  
+  
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    if textField == emailTextField {
+      passwordTextField.becomeFirstResponder()
+    } else {
+      passwordTextField.resignFirstResponder()
+    }
+    return true
+  }
+  
+  
+  
+  func enableUI(isOn: Bool) {
+    
+    emailTextField.enabled = isOn
+    passwordTextField.enabled = isOn
+    loginButton.enabled = isOn
+    signUpButton.enabled = isOn
+    
+    if isOn {
+      loadingWheel.stopAnimating()
+      
+    } else {
+      loadingWheel.startAnimating()
+    }
+    
   }
   
   

@@ -59,14 +59,21 @@ struct UdacityClient {
       
       // GUARD: Was there an error
       guard (error == nil) else {
-        sendError("There was an error with your request \(error)")
+        sendError("No Internet Connection")
+        print(error)
+        
         return
       }
       
       // GUARD: Did we get a successful 2XX response
       guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
-        sendError("Your request returned a status code other than 2xx" + String(response))
-        return
+        if (response as! NSHTTPURLResponse).statusCode == 403 {
+          sendError("Invalid Login Details")
+          return
+        } else {
+          sendError("Your request returned a status code other than 2xx" + "\(response)")
+          return
+        }
       }
       
       // GUARD: Was there any data returned?

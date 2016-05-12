@@ -12,8 +12,6 @@ extension UdacityClient {
   
   func authenticateWithLoginAndReturnUserModel(userName: String, password: String, completionHandlerForAuthenticateWithLogin: CompletionHandlerForLogin)  {
     
-    print("meow")
-    
     let jsonBody = "{\"udacity\": {\"username\": \"\(userName)\", \"password\": \"\(password)\"}}"
     
     taskForPost(UdacityConstants.login, jsonBody: jsonBody) { (result) -> Void in
@@ -47,9 +45,6 @@ extension UdacityClient {
       case let .Failure(error):
         completionHandlerForAuthenticateWithLogin(.Failure(error))
       }
-      
     }
-    
   }
-  
 }

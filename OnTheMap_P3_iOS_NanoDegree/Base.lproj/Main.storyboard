@@ -20,8 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JJ7-Th-Sfg">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <color key="color" red="1" green="0.0" blue="0.084040851152848539" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="9Wi-xn-4RR">
-                                <rect key="frame" x="20" y="28" width="560" height="201"/>
+                                <rect key="frame" x="20" y="81" width="560" height="201"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Udacity login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-uu-Tcm">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -35,12 +39,12 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vC2-gI-8no">
                                                 <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLK-6y-nef">
                                                 <rect key="frame" x="0.0" y="38" width="560" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Fi-qb-VK1">
                                                 <rect key="frame" x="0.0" y="76" width="560" height="30"/>
@@ -74,14 +78,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="JJ7-Th-Sfg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="A3n-hU-o3K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9Wi-xn-4RR" secondAttribute="trailing" id="CwE-GJ-5OT"/>
                             <constraint firstItem="9Wi-xn-4RR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E1r-wQ-zQ5"/>
-                            <constraint firstItem="9Wi-xn-4RR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="mJr-ai-VIx"/>
+                            <constraint firstItem="JJ7-Th-Sfg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c6h-iN-aM5"/>
+                            <constraint firstItem="9Wi-xn-4RR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="61" id="s3d-0B-vS0"/>
                             <constraint firstItem="9Wi-xn-4RR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="t7B-EB-yiF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="vC2-gI-8no" id="elC-h9-phO"/>
+                        <outlet property="loadingWheel" destination="JJ7-Th-Sfg" id="zTT-7a-kTv"/>
                         <outlet property="loginButton" destination="7Fi-qb-VK1" id="O2l-GB-LcN"/>
                         <outlet property="passwordTextField" destination="gLK-6y-nef" id="0P1-jD-ajf"/>
                         <outlet property="signUpButton" destination="6HS-AK-eNy" id="aT6-XR-xMj"/>
@@ -123,6 +130,9 @@
                             <barButtonItem image="pin" id="1MZ-a3-ezG"/>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="1ZY-9F-nA3" id="XIZ-3q-bjY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht5-BZ-KQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import MapKit
+
 
 class TabBarMapViewController: UIViewController {
   
+  @IBOutlet weak var mapView: MKMapView!
   
   
   
