@@ -10,7 +10,18 @@ import UIKit
 
 class TabBarListTableViewController: UITableViewController {
   
+  // MARK: properties and life cycles.
   
+  var userData: UserModel!
+  
+  
+  override func viewDidLoad() {
+    
+    // get the user data from the tab bar controller
+    let tbvc = self.tabBarController  as! MapAndListTabBarController
+    userData = tbvc.userData!
+    
+  }
   
   
 }

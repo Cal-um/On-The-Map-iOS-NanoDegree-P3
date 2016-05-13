@@ -43,7 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     UdacityClient().authenticateWithLoginAndReturnUserModel(email, password: password) { LoginResult in
       
-      // TODO: Add spinning wheel and disable UI while connection is made to server, then disable spinning wheel and renable UI when complete.
+     
       performUIUpdatesOnMain {
       
         switch LoginResult {
@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.performSegueWithIdentifier("loginSuccess", sender: nil)
         
           
-        // TODO: Add better error handling e.g. when incorrect details are entered, let the user know this, or no network connection.
+       
           
         case let .Failure(error):
           self.enableUI(true)
@@ -101,6 +101,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
       
       if let userData = userData {
         destinationTabBarController.userData = userData
+        
       }
     }
   }

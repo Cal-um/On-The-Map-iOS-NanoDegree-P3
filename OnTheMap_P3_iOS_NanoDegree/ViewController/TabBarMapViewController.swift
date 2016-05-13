@@ -12,7 +12,22 @@ import MapKit
 
 class TabBarMapViewController: UIViewController {
   
+  // MARK: Properties and outlets
+  
   @IBOutlet weak var mapView: MKMapView!
+  
+  var userData: UserModel!
+  
+  // MARK: View Cycles
+  
+  override func viewDidLoad() {
+    
+    // get the user data from the tab bar controller
+    let tbvc = self.tabBarController  as! MapAndListTabBarController
+    userData = tbvc.userData!
+    
+  }
+  
   
   
   
