@@ -26,6 +26,7 @@
 		3AF78C651CE613910033D154 /* ParseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C641CE613910033D154 /* ParseConstants.swift */; };
 		3AF78C671CE613AB0033D154 /* ParseConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C661CE613AB0033D154 /* ParseConvenience.swift */; };
 		3AF78C691CE613C30033D154 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C681CE613C30033D154 /* ParseClient.swift */; };
+		3AF78C6B1CE7229A0033D154 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3AF78C641CE613910033D154 /* ParseConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConstants.swift; sourceTree = "<group>"; };
 		3AF78C661CE613AB0033D154 /* ParseConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConvenience.swift; sourceTree = "<group>"; };
 		3AF78C681CE613C30033D154 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
+		3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				3A9F1C321CD7A358000A1475 /* UserModel.swift */,
+				3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */,
 				3A9F1C291CD3708D000A1475 /* Clients */,
 			);
 			name = Model;
@@ -335,6 +338,7 @@
 				3A5A5CC41CDCC588004D8CE4 /* UdacityClient.swift in Sources */,
 				3A5A5CC21CDCC2F7004D8CE4 /* UdacityConveniece.swift in Sources */,
 				3AF78C691CE613C30033D154 /* ParseClient.swift in Sources */,
+				3AF78C6B1CE7229A0033D154 /* StudentInformation.swift in Sources */,
 				3A9F1C2D1CD376A8000A1475 /* TabBarListTableViewController.swift in Sources */,
 				3A9F1C331CD7A358000A1475 /* UserModel.swift in Sources */,
 				3A9F1C2B1CD37674000A1475 /* TabBarMapViewController.swift in Sources */,

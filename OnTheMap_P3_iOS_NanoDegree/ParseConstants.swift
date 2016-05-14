@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+
+struct ParseConstants {
+  
+  struct JsonKeys {
+    
+    static let uniqueKey = "uniqueKey"
+    static let firstName = "firstName"
+    static let lastName = "lastName"
+    static let mapString = "mapString"
+    static var mediaURL = "mediaURL"
+    static var latitude = "latitude"
+    static var longitude = "longitude"
+  }
+  
+  
+}
