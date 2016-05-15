@@ -35,16 +35,15 @@ struct StudentInformation {
 
 extension StudentInformation {
   
-  static func getStudentsCollectionFromResults(results: [[String : AnyObject]]) -> StudentsCollection {
-   
+  static func getStudentsInfoFromResults(results: [[String : AnyObject]]) -> [StudentInformation] {
     
+    let studentInfo = results.map { i in StudentInformation(dictionary: i) }
     
-    
+    return studentInfo
   }
   
     
     
-  }
-  
-  
 }
+  
+  

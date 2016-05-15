@@ -53,9 +53,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.enableUI(true)
             self.performSegueWithIdentifier("loginSuccess", sender: nil)
         
-          
-       
-          
         case let .Failure(error):
           self.enableUI(true)
           let errorMessage = error as NSError

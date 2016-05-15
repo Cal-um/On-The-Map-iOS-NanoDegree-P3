@@ -6,6 +6,7 @@
 //  Copyright © 2016 Calum Harris. All rights reserved.
 //
 
+import MapKit
 import UIKit
 
 class InfoPostingViewController: UIViewController {
@@ -14,6 +15,7 @@ class InfoPostingViewController: UIViewController {
   @IBOutlet weak var whereAreyouStudying1: UILabel!
   @IBOutlet weak var whereAreYouStudying2: UILabel!
   @IBOutlet weak var whereAreYouStudying3: UILabel!
+  @IBOutlet weak var mapView: MKMapView!
   
   @IBOutlet weak var cancelBarButton: UIBarButtonItem!
   
@@ -22,6 +24,15 @@ class InfoPostingViewController: UIViewController {
   
   @IBOutlet weak var submitButton: UIButton!
   @IBOutlet weak var findOnMapButton: UIButton!
+  
+  @IBAction func goBackAction(sender: AnyObject) {
+    
+    dismissViewControllerAnimated(true, completion: nil)
+    
+  }
+  
+  
+  
   
   
 }
