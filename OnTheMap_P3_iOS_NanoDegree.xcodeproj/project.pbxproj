@@ -27,7 +27,6 @@
 		3AF78C671CE613AB0033D154 /* ParseConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C661CE613AB0033D154 /* ParseConvenience.swift */; };
 		3AF78C691CE613C30033D154 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C681CE613C30033D154 /* ParseClient.swift */; };
 		3AF78C6B1CE7229A0033D154 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */; };
-		3AF78C6D1CE727840033D154 /* StudentsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF78C6C1CE727840033D154 /* StudentsCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 		3AF78C661CE613AB0033D154 /* ParseConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseConvenience.swift; sourceTree = "<group>"; };
 		3AF78C681CE613C30033D154 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
-		3AF78C6C1CE727840033D154 /* StudentsCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +170,6 @@
 			children = (
 				3A9F1C321CD7A358000A1475 /* UserModel.swift */,
 				3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */,
-				3AF78C6C1CE727840033D154 /* StudentsCollection.swift */,
 				3A9F1C291CD3708D000A1475 /* Clients */,
 			);
 			name = Model;
@@ -347,7 +344,6 @@
 				3A9F1C2B1CD37674000A1475 /* TabBarMapViewController.swift in Sources */,
 				3A9F1C311CD3969D000A1475 /* UdacityContstants.swift in Sources */,
 				3A9F1C251CD3676E000A1475 /* LoginViewController.swift in Sources */,
-				3AF78C6D1CE727840033D154 /* StudentsCollection.swift in Sources */,
 				3A5A5CC01CDBAC6A004D8CE4 /* GCDMainQueue.swift in Sources */,
 				3AF78C671CE613AB0033D154 /* ParseConvenience.swift in Sources */,
 				3A9F1C2F1CD381EA000A1475 /* InfoPostingViewController.swift in Sources */,

@@ -23,8 +23,8 @@ class TabBarMapViewController: UIViewController {
   override func viewDidLoad() {
     
     // get the user data from the tab bar controller
-    let tbvc = self.tabBarController  as! MapAndListTabBarController
-    userData = tbvc.userData!
+    userData = (tabBarController as! MapAndListTabBarController).userData
+    
     
   }
   

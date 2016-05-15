@@ -29,7 +29,22 @@ struct StudentInformation {
     longitude = dictionary[ParseConstants.JsonKeys.longitude] as! Double
     
   }
+
+}
+
+
+extension StudentInformation {
   
+  static func getStudentsCollectionFromResults(results: [[String : AnyObject]]) -> StudentsCollection {
+   
+    
+    
+    
+  }
+  
+    
+    
+  }
   
   
 }

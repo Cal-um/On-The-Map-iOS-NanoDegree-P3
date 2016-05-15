@@ -12,5 +12,9 @@ class MapAndListTabBarController: UITabBarController {
   
   var userData: UserModel!
   
+  override func viewDidLoad() {
+    
+  }
+  
   
 }
