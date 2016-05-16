@@ -36,9 +36,7 @@ struct ParseConstants {
     
     static let Limit = 100
     static let OrderBy = "-updatedAt"
-    
   }
-  
   
   struct JsonKeys {
     
@@ -50,7 +48,6 @@ struct ParseConstants {
     static var latitude = "latitude"
     static var longitude = "longitude"
   }
-  
 }
 
 

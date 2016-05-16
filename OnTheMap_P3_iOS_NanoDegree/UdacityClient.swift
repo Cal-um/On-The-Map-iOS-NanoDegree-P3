@@ -8,10 +8,6 @@
 
 import Foundation
 
-
-
-
-
 struct UdacityClient {
 
   // Define completion handler typalias and Result enum for use throughout Authentication.
@@ -21,9 +17,9 @@ struct UdacityClient {
 
 
   enum Result {
+    
     case Success(AnyObject?)
     case Failure(ErrorType)
-    
   }
   
   
@@ -31,7 +27,6 @@ struct UdacityClient {
   
     case Success(UserModel)
     case Failure(ErrorType)
-  
   }
 
   
@@ -41,9 +36,9 @@ struct UdacityClient {
     
     // Build URL and configure the request
     let request = NSMutableURLRequest(URL: URLFromAction(action))
-    request.HTTPMethod = "Post"
-    request.addValue("application/json", forHTTPHeaderField: "Accept")
-    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.HTTPMethod = "POST"
+    request.addValue(UdacityConstants.HTTPHeaderKeys.AddValueJson, forHTTPHeaderField: UdacityConstants.HTTPHeaderValues.Accept)
+    request.addValue(UdacityConstants.HTTPHeaderKeys.AddValueJson, forHTTPHeaderField: UdacityConstants.HTTPHeaderValues.ContentType)
     request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
    
     
@@ -162,7 +157,7 @@ struct UdacityClient {
       
       // GUARD: Did we get a successful 2XX response
       guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
-        sendError("Your request returned a status code other than 2xx" + String(response))
+        sendError("Your request returned a status code other than 2xx \(response)")
         return
       }
       

@@ -22,13 +22,19 @@ struct UdacityConstants {
   static let logout = "/session"
   static let loginGetUserData = "/users"
 
-  struct Methods {
+  struct HTTPHeaderKeys {
     
-    static let Post = "POST"
-    static let delete = "DELETE"
-    static let addValueJson = "application/json"
-    
+    static let AddValueJson = "application/json"
   }
+  
+  
+  struct HTTPHeaderValues {
+    
+    static let Accept = "Accept"
+    static let ContentType = "Content-Type"
+    
+    
+}
   
   struct ParameterKeys {
     
