@@ -85,12 +85,7 @@ struct ParseClient {
   }
   
   
-  
-  
-  
-  
-  
-  func createURLFromParameters(parameters: [String : AnyObject]) -> NSURL {
+  private func createURLFromParameters(parameters: [String : AnyObject]) -> NSURL {
     
     let components = NSURLComponents()
     components.scheme = ParseConstants.APIScheme

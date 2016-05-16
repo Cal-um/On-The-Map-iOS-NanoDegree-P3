@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+extension ParseClient {
+  
+  func get100StudentProfiles(get100StudentProfilesCompletionHandler: completionHandlerForGet) {
+  
+    taskForGet(<#T##method: String##String#>, parameters: <#T##[String : AnyObject]#>, completionHandler: <#T##completionHandlerForGet##completionHandlerForGet##(ParseClient.Result) -> Void#>)
+  }
+  
+  
+  
+}
