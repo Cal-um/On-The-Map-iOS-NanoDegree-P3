@@ -68,7 +68,24 @@ extension TabBarListTableViewController {
   
   // MARK: Table View methods
   
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return studentDataModel.count
+  }
   
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
   
+    let cell = tableView.dequeueReusableCellWithIdentifier("nameCell")!
+    let student = studentDataModel[indexPath.row]
+    cell.textLabel?.text = "\(student.firstName) \(student.lastName)"
+    cell.imageView?.image = UIImage(named: "pin")
+    return cell
+  }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let student = studentDataModel[indexPath.row]
+    if let url = NSURL(string: student.mediaURL) {
+    UIApplication.sharedApplication().openURL(url)
+    }
+  }
   
 }
