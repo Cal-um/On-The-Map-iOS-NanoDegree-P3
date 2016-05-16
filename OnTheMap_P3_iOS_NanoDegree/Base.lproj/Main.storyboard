@@ -126,7 +126,11 @@
                     <navigationItem key="navigationItem" title="On The Map" id="4Ex-LX-Hwv">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="msU-i9-MhU"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="refresh" id="HeB-o5-z4Q"/>
+                            <barButtonItem systemItem="refresh" id="HeB-o5-z4Q">
+                                <connections>
+                                    <action selector="refreshButtonPress:" destination="dBG-38-vQS" id="9Ew-kg-glu"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="pin" id="1MZ-a3-ezG">
                                 <connections>
                                     <action selector="openAddLocation:" destination="dBG-38-vQS" id="1h2-7g-6gq"/>

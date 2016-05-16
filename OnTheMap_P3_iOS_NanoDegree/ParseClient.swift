@@ -13,12 +13,12 @@ struct ParseClient {
   typealias completionHandlerForGet = (Result) -> Void
   
   enum Result {
-    case Success(AnyObject)
+    case Success(AnyObject?)
     case Failure(ErrorType)
   }
   
   
-  func taskForGet(method: String, parameters: [String : AnyObject], completionHandler: completionHandlerForGet) -> NSURLSessionDataTask {
+  func taskForGet(parameters: [String : AnyObject], completionHandler: completionHandlerForGet) -> NSURLSessionDataTask {
   
     let session = NSURLSession.sharedSession()
     
@@ -27,9 +27,11 @@ struct ParseClient {
     // Build URL and configure the request
     let request = NSMutableURLRequest(URL: createURLFromParameters(parameters))
     request.HTTPMethod = "GET"
-    request.addValue(ParseConstants.HTTPHeaderKeys.ApplicationID, forHTTPHeaderField: ParseConstants.HTTPHeaderValues.ApplicationID)
-    request.addValue(ParseConstants.HTTPHeaderKeys.RESTAPIKey, forHTTPHeaderField: ParseConstants.HTTPHeaderValues.RESTAPIKey)
-    
+    //request.addValue(ParseConstants.HTTPHeaderKeys.ApplicationID, forHTTPHeaderField: ParseConstants.HTTPHeaderValues.ApplicationID)
+    //request.addValue(ParseConstants.HTTPHeaderKeys.RESTAPIKey, forHTTPHeaderField: ParseConstants.HTTPHeaderValues.RESTAPIKey)
+    request.addValue(ParseConstants.HTTPHeaderValues.ApplicationID, forHTTPHeaderField: ParseConstants.HTTPHeaderKeys.ApplicationID)
+    request.addValue(ParseConstants.HTTPHeaderValues.RESTAPIKey, forHTTPHeaderField: ParseConstants.HTTPHeaderKeys.RESTAPIKey)
+    print(request.allHTTPHeaderFields)
     // Make request
     
     let task = session.dataTaskWithRequest(request) {(data, response, error) in
@@ -47,7 +49,7 @@ struct ParseClient {
     
       // GUARD: Did we get a successful 2XX response
       guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
-        sendError("Your request returned a status code other than 2xx" + String(response))
+        sendError("Your request returned a status code other than 2xx \(response)")
         return
       }
       
@@ -58,7 +60,7 @@ struct ParseClient {
       }
       
       // Parse the data and use the data (Happens in the completion handler)
-      self.convertDataWithCompletionHander(data, completionHandler: completionHandler)
+      self.convertDataWithCompletionHander(data, completionHandlerForConversion: completionHandler)
   
     }
     task.resume()
@@ -66,21 +68,19 @@ struct ParseClient {
   }
   
   
-  private func convertDataWithCompletionHander(data: NSData, completionHandler: completionHandlerForGet) {
-    
+  private func convertDataWithCompletionHander(data: NSData, completionHandlerForConversion: completionHandlerForGet) {
+    print(data)
     var parsedResult: AnyObject!
     do {
       
-      let newData = data.subdataWithRange(NSMakeRange(5, data.length - 5))
-      
-      parsedResult = try NSJSONSerialization.JSONObjectWithData(newData, options: .AllowFragments)
+      parsedResult = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
     } catch {
       
       let userInfo = [NSLocalizedDescriptionKey : "Could not parse the data as JSON: '\(data)'"]
-      completionHandler(.Failure(NSError(domain: "convertDataWithCompletionHander", code: 1, userInfo: userInfo)))
+      completionHandlerForConversion(.Failure(NSError(domain: "convertDataWithCompletionHander", code: 1, userInfo: userInfo)))
     }
     
-    completionHandler(.Success(parsedResult))
+    completionHandlerForConversion(.Success(parsedResult))
     
   }
   
@@ -98,7 +98,7 @@ struct ParseClient {
       let queryItem = NSURLQueryItem(name: key, value: "\(value)")
       components.queryItems?.append(queryItem)
     }
-    
+    print(components.URL)
     return components.URL!
   }
   

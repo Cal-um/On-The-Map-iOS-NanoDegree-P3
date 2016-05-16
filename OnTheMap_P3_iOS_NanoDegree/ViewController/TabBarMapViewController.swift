@@ -16,15 +16,18 @@ class TabBarMapViewController: UIViewController {
   
   @IBOutlet weak var mapView: MKMapView!
   
-  var userData: UserModel!
+  var studentDataModel: [StudentInformation] {
+    
+    return (UIApplication.sharedApplication().delegate as! AppDelegate).studentCollection
+  }
+  
   
   // MARK: View Cycles
   
   override func viewDidLoad() {
     
-    // get the user data from the tab bar controller
-    userData = (tabBarController as! MapAndListTabBarController).userData
-    
+    // get the data from network on first load
+    refreshData()
     
   }
   
@@ -33,6 +36,36 @@ class TabBarMapViewController: UIViewController {
     (tabBarController as! MapAndListTabBarController).performSegueWithIdentifier("addLocation", sender: sender)
     
   }
+  
+  @IBAction func refreshButtonPress(sender: AnyObject) {
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    print(appDelegate.studentCollection)
+    
+  }
+  
+  func refreshData() {
+    
+    ParseClient().get100StudentProfiles { profiles -> Void in
+      
+      switch profiles {
+      case let .Success(passToAppDelegate):
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppDelegate)
+        print(appDelegate.studentCollection)
+
+        
+      case let .Failure(error):
+        print(error)
+      }
+      
+      
+    }
+
+    
+    
+  }
+  
+  
   
   
 }

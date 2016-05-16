@@ -125,11 +125,11 @@
 			children = (
 				3A9F1C261CD367E0000A1475 /* ViewController */,
 				3A9F1C271CD36F51000A1475 /* Model */,
-				3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */,
 				3A5A5CBF1CDBAC6A004D8CE4 /* GCDMainQueue.swift */,
+				3A9F1BF61CD35E19000A1475 /* AppDelegate.swift */,
 				3A9F1BFA1CD35E19000A1475 /* Main.storyboard */,
-				3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */,
 				3A9F1BFF1CD35E19000A1475 /* LaunchScreen.storyboard */,
+				3A9F1BFD1CD35E19000A1475 /* Assets.xcassets */,
 				3A9F1C021CD35E19000A1475 /* Info.plist */,
 			);
 			path = OnTheMap_P3_iOS_NanoDegree;

@@ -13,7 +13,7 @@ struct ParseConstants {
   
   static let APIScheme = "https"
   static let APIHost = "api.parse.com"
-  static let APIPath = "/1/classes"
+  static let APIPath = "/1/classes/StudentLocation"
   
   struct HTTPHeaderKeys {
     static let ApplicationID = "X-Parse-Application-Id"
@@ -29,7 +29,6 @@ struct ParseConstants {
     
     static let Limit = "limit"
     static let OrderBy = "order"
-    
   }
   
   struct ParameterValues {
@@ -47,6 +46,11 @@ struct ParseConstants {
     static var mediaURL = "mediaURL"
     static var latitude = "latitude"
     static var longitude = "longitude"
+  }
+  
+  
+  struct JsonResponseKeys {
+    static let Results = "results"
   }
 }
 
