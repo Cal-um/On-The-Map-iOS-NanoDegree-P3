@@ -28,6 +28,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     passwordTextField.delegate = self
   }
   
+  override func viewWillAppear(animated: Bool) {
+    emailTextField.text = ""
+    passwordTextField.text = ""
+  }
+  
   
   
   // Actions

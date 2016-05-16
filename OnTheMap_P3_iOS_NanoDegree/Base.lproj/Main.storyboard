@@ -124,7 +124,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="On The Map" id="4Ex-LX-Hwv">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="msU-i9-MhU"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="msU-i9-MhU">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="dBG-38-vQS" id="UtC-Ht-m8r"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="HeB-o5-z4Q">
                                 <connections>
@@ -340,7 +344,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="On The Map" id="zHX-Kh-lKK">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="nqT-kl-wcC"/>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="nqT-kl-wcC">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="mVY-kh-5gx" id="1ec-Y2-mJ5"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="refresh" id="L4B-ps-PfB">
                                 <connections>

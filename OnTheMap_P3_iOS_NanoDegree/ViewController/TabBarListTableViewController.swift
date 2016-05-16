@@ -37,6 +37,26 @@ class TabBarListTableViewController: UITableViewController {
     refreshData()
   }
   
+  @IBAction func logoutButtonTapped(sender: AnyObject) {
+    
+    UdacityClient().taskForDelete(UdacityConstants.logout) { (result) -> Void in
+      switch result {
+        
+      case let .Success(string):
+        performUIUpdatesOnMain {
+        print(string)
+          self.dismissViewControllerAnimated(true, completion: nil)
+        }
+      case let .Failure(error):
+        performUIUpdatesOnMain {
+        self.unsuccessfulLogoutAlert()
+        print(error)
+        }
+      }
+    }
+  }
+  
+  
   
   // MARK: Networking methods
   
@@ -58,10 +78,15 @@ class TabBarListTableViewController: UITableViewController {
         
       case let .Failure(error):
         print(error)
+        performUIUpdatesOnMain {
+          self.networkErrorAlert()
+        }
       }
     }
   }
 }
+
+
 
 
 extension TabBarListTableViewController {
@@ -83,9 +108,41 @@ extension TabBarListTableViewController {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let student = studentDataModel[indexPath.row]
+    
     if let url = NSURL(string: student.mediaURL) {
-    UIApplication.sharedApplication().openURL(url)
+      UIApplication.sharedApplication().openURL(url)
+    } else {
+      noWebsiteAlert()
     }
   }
   
+  // MARK: Alert Controllers
+  
+  func networkErrorAlert() {
+    
+    let alertMessage = "There was a network error, try and tap the refresh button"
+    let ac = UIAlertController(title: "Whoops", message: alertMessage, preferredStyle: .Alert)
+    ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
+    
+    presentViewController(ac, animated: true, completion: nil)
+  }
+  
+  // TODO: This aint working.
+  func noWebsiteAlert() {
+    
+    let alertMessage = "This student did not enter a website"
+    let ac = UIAlertController(title: "Whoops", message: alertMessage, preferredStyle: .Alert)
+    ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
+    
+    presentViewController(ac, animated: true, completion: nil)
+  }
+  
+  func unsuccessfulLogoutAlert() {
+    
+    let alertMessage = "Unsuccessful Logout due to network error"
+    let ac = UIAlertController(title: "Warning", message: alertMessage, preferredStyle: .Alert)
+    ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: { (UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil) }))
+    
+    presentViewController(ac, animated: true, completion: nil)
+  }
 }

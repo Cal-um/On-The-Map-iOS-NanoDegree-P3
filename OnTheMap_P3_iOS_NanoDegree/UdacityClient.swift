@@ -227,7 +227,7 @@ struct UdacityClient {
     
     let task = session.dataTaskWithRequest(request) { data, response, error in
       
-      if error != nil {
+      if error == nil {
         taskForDeleteCompletionHandler(.Success("logout"))
       } else {
         taskForDeleteCompletionHandler(.Failure(error!))

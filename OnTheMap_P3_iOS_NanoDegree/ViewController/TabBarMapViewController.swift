@@ -47,6 +47,25 @@ class TabBarMapViewController: UIViewController {
     
   }
   
+  @IBAction func logoutButtonTapped(sender: AnyObject) {
+    
+    UdacityClient().taskForDelete(UdacityConstants.logout) { (result) -> Void in
+      switch result {
+        
+      case let .Success(string):
+        performUIUpdatesOnMain {
+          print(string)
+          self.dismissViewControllerAnimated(true, completion: nil)
+        }
+      case let .Failure(error):
+        performUIUpdatesOnMain {
+          self.unsuccessfulLogoutAlert()
+          print(error)
+        }
+      }
+    }
+  }
+  
   
   // MARK: Networking methods
   
@@ -67,7 +86,32 @@ class TabBarMapViewController: UIViewController {
       }
     }
   }
+  
+  // Alert methods
+  
+  func unsuccessfulLogoutAlert() {
+    
+    let alertMessage = "Unsuccessful Logout due to network error"
+    let ac = UIAlertController(title: "Warning", message: alertMessage, preferredStyle: .Alert)
+    ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: { (UIAlertAction) -> Void in self.dismissViewControllerAnimated(true, completion: nil) }))
+    
+    presentViewController(ac, animated: true, completion: nil)
+  }
+  
+  func networkErrorAlert() {
+    
+    let alertMessage = "There was a network error, try and tap the refresh button"
+    let ac = UIAlertController(title: "Whoops", message: alertMessage, preferredStyle: .Alert)
+    ac.addAction(UIAlertAction(title: "OK'", style: .Default, handler: nil))
+    
+    presentViewController(ac, animated: true, completion: nil)
+  }
+  
+  
+  
 }
+
+
 
 
 
