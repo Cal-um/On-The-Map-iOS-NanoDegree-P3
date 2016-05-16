@@ -17,19 +17,23 @@ class TabBarMapViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   
   var studentDataModel: [StudentInformation] {
-    
     return (UIApplication.sharedApplication().delegate as! AppDelegate).studentCollection
   }
   
   
   // MARK: View Cycles
   
-  override func viewDidLoad() {
+  override func viewWillAppear(animated: Bool) {
     
-    // get the data from network on first load
-    refreshData()
+    // checks if there is any data and if not, fetches data (there is no point refreshing every time the page appears)
+    
+    if studentDataModel.count == 0 {
+      refreshData()
+    }
     
   }
+  
+  // MARK: Actions
   
   @IBAction func openAddLocation(sender: AnyObject) {
     
@@ -43,11 +47,15 @@ class TabBarMapViewController: UIViewController {
     
   }
   
+  
+  // MARK: Networking methods
+  
   func refreshData() {
     
     ParseClient().get100StudentProfiles { profiles -> Void in
       
       switch profiles {
+        
       case let .Success(passToAppDelegate):
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppDelegate)
@@ -57,15 +65,9 @@ class TabBarMapViewController: UIViewController {
       case let .Failure(error):
         print(error)
       }
-      
-      
     }
-
-    
-    
   }
-  
-  
-  
-  
 }
+
+
+

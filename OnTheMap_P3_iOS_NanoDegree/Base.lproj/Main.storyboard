@@ -342,7 +342,11 @@
                     <navigationItem key="navigationItem" title="On The Map" id="zHX-Kh-lKK">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="nqT-kl-wcC"/>
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="refresh" id="L4B-ps-PfB"/>
+                            <barButtonItem systemItem="refresh" id="L4B-ps-PfB">
+                                <connections>
+                                    <action selector="refreshDataButtonPressed:" destination="mVY-kh-5gx" id="zlo-DX-yEW"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="pin" id="CBL-CG-qhg">
                                 <connections>
                                     <action selector="openAddLocation:" destination="mVY-kh-5gx" id="6be-7t-tq7"/>
