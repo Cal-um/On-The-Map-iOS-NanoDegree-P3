@@ -23,6 +23,8 @@ class TabBarListTableViewController: UITableViewController {
     if studentDataModel.count == 0 {
       refreshData()
     }
+    
+    tableView.reloadData()
   }
   
   
@@ -42,9 +44,9 @@ class TabBarListTableViewController: UITableViewController {
     UdacityClient().taskForDelete(UdacityConstants.logout) { (result) -> Void in
       switch result {
         
-      case let .Success(string):
+      case let .Success(json):
         performUIUpdatesOnMain {
-        print(string)
+        print(json)
           self.dismissViewControllerAnimated(true, completion: nil)
         }
       case let .Failure(error):

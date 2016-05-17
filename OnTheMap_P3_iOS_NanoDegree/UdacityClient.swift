@@ -227,11 +227,32 @@ struct UdacityClient {
     
     let task = session.dataTaskWithRequest(request) { data, response, error in
       
-      if error == nil {
-        taskForDeleteCompletionHandler(.Success("logout"))
-      } else {
-        taskForDeleteCompletionHandler(.Failure(error!))
+      func sendError(error: String) {
+        print(error)
+        let userInfo = [NSLocalizedDescriptionKey : error]
+        taskForDeleteCompletionHandler(.Failure(NSError(domain: "taskForGET", code: 1, userInfo: userInfo)))
       }
+      
+      // GUARD: Was there an error
+      guard (error == nil) else {
+        sendError("There was an error with your request \(error)")
+        return
+      }
+      
+      // GUARD: Did we get a successful 2XX response
+      guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+        sendError("Your request returned a status code other than 2xx \(response)")
+        return
+      }
+      
+      // GUARD: Was there any data returned?
+      guard let data = data else {
+        sendError("No data was returned by your request")
+        return
+      }
+      
+      // Parse the data and use the data (Happens in the completion handler)
+      self.convertDataWithCompletionHander(data, completionHandler: taskForDeleteCompletionHandler)
     }
     task.resume()
   }
