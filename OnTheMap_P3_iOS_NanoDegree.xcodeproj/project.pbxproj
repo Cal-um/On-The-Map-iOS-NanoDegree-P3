@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A18F2021CEB2087003141B9 /* MapMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A18F2011CEB2087003141B9 /* MapMethods.swift */; };
 		3A5A5CC01CDBAC6A004D8CE4 /* GCDMainQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A5CBF1CDBAC6A004D8CE4 /* GCDMainQueue.swift */; };
 		3A5A5CC21CDCC2F7004D8CE4 /* UdacityConveniece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A5CC11CDCC2F7004D8CE4 /* UdacityConveniece.swift */; };
 		3A5A5CC41CDCC588004D8CE4 /* UdacityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A5CC31CDCC588004D8CE4 /* UdacityClient.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A18F2011CEB2087003141B9 /* MapMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMethods.swift; sourceTree = "<group>"; };
 		3A5A5CBF1CDBAC6A004D8CE4 /* GCDMainQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDMainQueue.swift; sourceTree = "<group>"; };
 		3A5A5CC11CDCC2F7004D8CE4 /* UdacityConveniece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityConveniece.swift; sourceTree = "<group>"; };
 		3A5A5CC31CDCC588004D8CE4 /* UdacityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 			children = (
 				3A9F1C321CD7A358000A1475 /* UserModel.swift */,
 				3AF78C6A1CE7229A0033D154 /* StudentInformation.swift */,
+				3A18F2011CEB2087003141B9 /* MapMethods.swift */,
 				3A9F1C291CD3708D000A1475 /* Clients */,
 			);
 			name = Model;
@@ -348,6 +351,7 @@
 				3AF78C671CE613AB0033D154 /* ParseConvenience.swift in Sources */,
 				3A9F1C2F1CD381EA000A1475 /* InfoPostingViewController.swift in Sources */,
 				3AF78C621CE345E70033D154 /* MapAndListTabBarController.swift in Sources */,
+				3A18F2021CEB2087003141B9 /* MapMethods.swift in Sources */,
 				3A9F1BF71CD35E19000A1475 /* AppDelegate.swift in Sources */,
 				3AF78C651CE613910033D154 /* ParseConstants.swift in Sources */,
 			);

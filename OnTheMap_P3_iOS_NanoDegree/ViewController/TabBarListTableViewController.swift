@@ -93,7 +93,7 @@ class TabBarListTableViewController: UITableViewController {
 
 extension TabBarListTableViewController {
   
-  // MARK: Table View methods
+  // MARK: Table View data source
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return studentDataModel.count

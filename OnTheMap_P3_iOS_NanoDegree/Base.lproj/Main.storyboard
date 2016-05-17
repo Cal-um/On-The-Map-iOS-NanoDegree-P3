@@ -172,7 +172,6 @@
         <!--Map-->
         <scene sceneID="BJQ-Ec-6q1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rsx-0D-vfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MBa-n3-K0S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="22h-qS-jKX"/>
                     <toolbarItems/>
@@ -185,6 +184,7 @@
                         <segue destination="dBG-38-vQS" kind="relationship" relationship="rootViewController" id="KN7-xo-KBg"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rsx-0D-vfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1955" y="5"/>
         </scene>
@@ -370,7 +370,6 @@
         <!--Item-->
         <scene sceneID="h25-Kl-vqD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hnp-eD-zv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fSi-S8-rEh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="list" id="rue-bT-afK"/>
                     <toolbarItems/>
@@ -383,6 +382,7 @@
                         <segue destination="mVY-kh-5gx" kind="relationship" relationship="rootViewController" id="d2c-kl-312"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hnp-eD-zv6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2061" y="827"/>
         </scene>

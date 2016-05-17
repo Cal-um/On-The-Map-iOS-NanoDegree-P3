@@ -23,6 +23,10 @@ class TabBarMapViewController: UIViewController {
   
   // MARK: View Cycles
   
+  override func viewDidLoad() {
+    mapView.delegate = self
+  }
+  
   override func viewWillAppear(animated: Bool) {
     
     // checks if there is any data and if not, fetches data (there is no point refreshing every time the page appears)
@@ -79,6 +83,8 @@ class TabBarMapViewController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppDelegate)
         print(appDelegate.studentCollection)
+        self.mapView.removeAnnotations(self.mapView.annotations)
+        self.mapView.addAnnotations(MapMethods.getPointAnnotationsFromStudentInformation(self.studentDataModel))
 
         
       case let .Failure(error):
@@ -106,7 +112,42 @@ class TabBarMapViewController: UIViewController {
     
     presentViewController(ac, animated: true, completion: nil)
   }
+}
+
+
+extension TabBarMapViewController: MKMapViewDelegate {
   
+  // configure pins
+  
+  func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    
+    let reuseID = "pin"
+    
+    var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseID) as? MKPinAnnotationView
+    
+    if pinView == nil {
+      pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseID)
+      pinView!.canShowCallout = true
+      pinView!.pinTintColor = UIColor.redColor()
+      pinView!.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+    } else {
+      pinView!.annotation = annotation
+    }
+    
+    return pinView
+  }
+  
+  // configure the action when pins are tapped.
+  
+  func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+    
+    if control == view.rightCalloutAccessoryView {
+      let app = UIApplication.sharedApplication()
+      if let toOpen = view.annotation?.subtitle! {
+        app.openURL(NSURL(string: toOpen)!)
+      }
+    }
+  }
   
   
 }
