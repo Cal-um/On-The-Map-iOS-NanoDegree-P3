@@ -11,6 +11,7 @@ import UIKit
 
 class InfoPostingViewController: UIViewController {
   
+  var userData: UserModel!
   
   @IBOutlet weak var whereAreyouStudying1: UILabel!
   @IBOutlet weak var whereAreYouStudying2: UILabel!

@@ -12,8 +12,14 @@ class MapAndListTabBarController: UITabBarController {
   
   var userData: UserModel!
   
-  override func viewDidLoad() {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
+    if segue.identifier == "addLocation" {
+      
+      if let destinationController = segue.destinationViewController as? InfoPostingViewController {
+      destinationController.userData = userData
+      }
+    }
   }
   
   
