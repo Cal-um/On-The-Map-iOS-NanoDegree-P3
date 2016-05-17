@@ -46,9 +46,8 @@ class TabBarMapViewController: UIViewController {
   }
   
   @IBAction func refreshButtonPress(sender: AnyObject) {
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    print(appDelegate.studentCollection)
     
+    refreshData()
   }
   
   @IBAction func logoutButtonTapped(sender: AnyObject) {
@@ -83,9 +82,11 @@ class TabBarMapViewController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppDelegate)
         print(appDelegate.studentCollection)
+        
+        performUIUpdatesOnMain {
         self.mapView.removeAnnotations(self.mapView.annotations)
         self.mapView.addAnnotations(MapMethods.getPointAnnotationsFromStudentInformation(self.studentDataModel))
-
+        }
         
       case let .Failure(error):
         print(error)
@@ -143,8 +144,8 @@ extension TabBarMapViewController: MKMapViewDelegate {
     
     if control == view.rightCalloutAccessoryView {
       let app = UIApplication.sharedApplication()
-      if let toOpen = view.annotation?.subtitle! {
-        app.openURL(NSURL(string: toOpen)!)
+      if let toOpen = view.annotation?.subtitle!, url = NSURL(string: toOpen) {
+        app.openURL(url)
       }
     }
   }
