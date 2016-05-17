@@ -23,7 +23,6 @@ struct UdacityConstants {
   static let loginGetUserData = "/users"
 
   struct HTTPHeaderKeys {
-    
     static let AddValueJson = "application/json"
   }
   

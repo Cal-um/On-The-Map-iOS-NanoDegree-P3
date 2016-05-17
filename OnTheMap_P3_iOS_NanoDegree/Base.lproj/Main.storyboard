@@ -229,7 +229,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter web address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh9-sh-zc2">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter web address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fh9-sh-zc2">
                                         <rect key="frame" x="8" y="61" width="584" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -252,11 +252,17 @@
                                         <rect key="frame" x="262" y="40" width="76" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="submitButtonPressed:" destination="XIv-m5-N79" eventType="touchUpInside" id="CBP-7D-emS"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUh-u5-iEZ">
                                         <rect key="frame" x="214" y="40" width="173" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Find on the Map"/>
+                                        <connections>
+                                            <action selector="FindOnMapButtonTapped:" destination="XIv-m5-N79" eventType="touchUpInside" id="e2w-Oz-lpC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -272,17 +278,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lq7-BV-M1R">
-                                <rect key="frame" x="0.0" y="0.0" width="25" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DVc-ks-AnM">
+                                <rect key="frame" x="290" y="227" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="SL2-1p-khD" secondAttribute="trailing" id="7XI-Q6-Hxj"/>
                             <constraint firstItem="slf-Ar-xGl" firstAttribute="height" secondItem="RyH-A6-iCf" secondAttribute="height" multiplier="0.2" id="8EM-1s-PsQ"/>
                             <constraint firstItem="SL2-1p-khD" firstAttribute="leading" secondItem="RyH-A6-iCf" secondAttribute="leadingMargin" id="9V2-KD-ZM8"/>
+                            <constraint firstItem="DVc-ks-AnM" firstAttribute="centerX" secondItem="RyH-A6-iCf" secondAttribute="centerX" id="C3g-Wv-2Dv"/>
                             <constraint firstItem="SL2-1p-khD" firstAttribute="top" secondItem="bKD-wr-oX5" secondAttribute="bottom" constant="8" symbolic="YES" id="CQQ-fJ-Pq5"/>
                             <constraint firstAttribute="bottomMargin" secondItem="9Jb-oV-PbX" secondAttribute="bottom" id="F9X-Hf-PkO"/>
                             <constraint firstItem="bKD-wr-oX5" firstAttribute="height" secondItem="RyH-A6-iCf" secondAttribute="height" multiplier="0.25" id="FEL-nT-l5h"/>
@@ -291,6 +296,7 @@
                             <constraint firstItem="WWD-oM-3mh" firstAttribute="top" secondItem="slf-Ar-xGl" secondAttribute="bottom" id="QtI-TW-Nhj"/>
                             <constraint firstItem="slf-Ar-xGl" firstAttribute="leading" secondItem="RyH-A6-iCf" secondAttribute="leading" id="coK-Rg-HDl"/>
                             <constraint firstItem="bKD-wr-oX5" firstAttribute="top" secondItem="fG8-Qc-ixx" secondAttribute="bottom" id="dON-Px-d0e"/>
+                            <constraint firstItem="DVc-ks-AnM" firstAttribute="centerY" secondItem="SL2-1p-khD" secondAttribute="centerY" id="daO-DJ-hsa"/>
                             <constraint firstAttribute="trailing" secondItem="slf-Ar-xGl" secondAttribute="trailing" id="pr9-iD-oMt"/>
                             <constraint firstItem="9Jb-oV-PbX" firstAttribute="leading" secondItem="RyH-A6-iCf" secondAttribute="leading" id="uKV-bS-gIR"/>
                             <constraint firstAttribute="trailing" secondItem="bKD-wr-oX5" secondAttribute="trailing" id="xF3-R9-GvT"/>
@@ -305,8 +311,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityViewOutlet" destination="DVc-ks-AnM" id="j3v-o8-xbH"/>
                         <outlet property="cancelBarButton" destination="VFb-yr-qGx" id="L3e-SG-hcY"/>
-                        <outlet property="findOnMapButton" destination="sUh-u5-iEZ" id="WaJ-W4-i6u"/>
+                        <outlet property="findOnMapButton" destination="sUh-u5-iEZ" id="n5L-Vb-kUJ"/>
                         <outlet property="locationTextField" destination="SL2-1p-khD" id="USv-Yg-gyc"/>
                         <outlet property="mapView" destination="9Jb-oV-PbX" id="9n5-GE-3Vt"/>
                         <outlet property="submitButton" destination="NvE-Kd-zbg" id="jll-4G-VdG"/>

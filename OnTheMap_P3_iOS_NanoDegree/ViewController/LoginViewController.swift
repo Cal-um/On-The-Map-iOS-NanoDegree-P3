@@ -54,7 +54,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         switch LoginResult {
           
         case let .Success(result):
-            self.userData = result
+          
+            (UIApplication.sharedApplication().delegate as! AppDelegate).userModel = result
+            print(self.userData)
             self.enableUI(true)
             self.performSegueWithIdentifier("loginSuccess", sender: nil)
         

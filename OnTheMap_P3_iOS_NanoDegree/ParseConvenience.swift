@@ -41,4 +41,20 @@ extension ParseClient {
       }
     }
   }
+  
+  func postStudentLocationToParse(firstName: String, lastName: String, uniqueKey: String, mapString: String, mediaURL: String, lat: Double, long: Double, completionHandlerForPost: completionHandlerForTask) {
+    
+   let jsonString = "{\"uniqueKey\": \"\(uniqueKey)\", \"firstName\": \"\(firstName)\", \"lastName\": \"\(lastName)\",\"mapString\": \"\(mapString)\", \"mediaURL\": \"\(mediaURL)\",\"latitude\": \(lat), \"longitude\": \(long)}"
+    
+    taskForPost(jsonString) { (result) -> Void in
+      
+      switch result {
+        
+      case let .Success(json):
+        completionHandlerForPost(.Success(json))
+      case let .Failure(error):
+        completionHandlerForPost(.Failure(error))
+      }
+    }
+  }
 }

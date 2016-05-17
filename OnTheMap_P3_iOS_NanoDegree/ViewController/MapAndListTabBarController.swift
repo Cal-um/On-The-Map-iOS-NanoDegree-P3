@@ -11,8 +11,9 @@ import UIKit
 class MapAndListTabBarController: UITabBarController {
   
   var userData: UserModel!
+  // keeping code for a future version.
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+ /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
     if segue.identifier == "addLocation" {
       
@@ -20,7 +21,7 @@ class MapAndListTabBarController: UITabBarController {
       destinationController.userData = userData
       }
     }
-  }
+  }*/
   
   
 }
