@@ -13,7 +13,7 @@ class TabBarListTableViewController: UITableViewController {
   // MARK: properties and life cycles.
   
   var studentDataModel: [StudentInformation] {
-    return (UIApplication.sharedApplication().delegate as! AppDelegate).studentCollection
+    return StudentCollection.sharedInstance.studentCollection
   }
   
   override func viewWillAppear(animated: Bool) {

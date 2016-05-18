@@ -17,7 +17,7 @@ class TabBarMapViewController: UIViewController {
   @IBOutlet weak var mapView: MKMapView!
   
   var studentDataModel: [StudentInformation] {
-    return (UIApplication.sharedApplication().delegate as! AppDelegate).studentCollection
+    return StudentCollection.sharedInstance.studentCollection
   }
   
   

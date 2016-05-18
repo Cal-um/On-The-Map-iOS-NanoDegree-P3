@@ -11,6 +11,10 @@ import UIKit
 class MapAndListTabBarController: UITabBarController {
   
   var userData: UserModel!
+  
+  // This class is nessessary for activating the segue to InfoPosingViewController from the map and list view controller.
+  
+  
   // keeping code for a future version.
   
  /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
