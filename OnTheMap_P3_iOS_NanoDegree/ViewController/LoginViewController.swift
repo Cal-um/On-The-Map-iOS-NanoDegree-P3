@@ -98,19 +98,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "loginSuccess" {
-      let tabBarController = segue.destinationViewController as! UITabBarController
-      let destinationTabBarController = tabBarController as! MapAndListTabBarController
-      
-      if let userData = userData {
-        destinationTabBarController.userData = userData
-        
-      }
-    }
-  }
-  
-  
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     if textField == emailTextField {

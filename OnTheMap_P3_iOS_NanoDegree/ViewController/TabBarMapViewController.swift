@@ -41,7 +41,8 @@ class TabBarMapViewController: UIViewController {
   
   @IBAction func openAddLocation(sender: AnyObject) {
     
-    (tabBarController as! MapAndListTabBarController).performSegueWithIdentifier("addLocation", sender: sender)
+    
+    tabBarController!.performSegueWithIdentifier("addLocation", sender: sender)
     
   }
   
