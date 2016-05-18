@@ -68,11 +68,10 @@ class TabBarListTableViewController: UITableViewController {
       
       switch profiles {
         
-      case let .Success(passToAppDelegate):
+      case let .Success(passToAppSingleton):
         
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppDelegate)
-        print(appDelegate.studentCollection)
+        StudentCollection.sharedInstance.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppSingleton)
+        print(StudentCollection.sharedInstance.studentCollection)
         
         performUIUpdatesOnMain {
           self.tableView.reloadData()

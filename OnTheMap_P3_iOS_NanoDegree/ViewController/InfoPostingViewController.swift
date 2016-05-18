@@ -108,10 +108,9 @@ class InfoPostingViewController: UIViewController {
         case let .Success(json):
           print(json)
           
-          // ensure student collection is empty so map and table refresh new data.
+          // ensure student collection is empty so map/table refresh new data.
           
-          let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-          appDelegate.studentCollection = []
+          StudentCollection.sharedInstance.studentCollection = []
           performUIUpdatesOnMain({ 
             self.dismissViewControllerAnimated(true, completion: nil)
           })

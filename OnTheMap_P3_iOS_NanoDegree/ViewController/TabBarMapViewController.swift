@@ -78,10 +78,9 @@ class TabBarMapViewController: UIViewController {
       
       switch profiles {
         
-      case let .Success(passToAppDelegate):
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.studentCollection = StudentInformation.getStudentsInfoFromResults(passToAppDelegate)
-        print(appDelegate.studentCollection)
+      case let .Success(passToSingleton):
+        StudentCollection.sharedInstance.studentCollection = StudentInformation.getStudentsInfoFromResults(passToSingleton)
+        print(StudentCollection.sharedInstance.studentCollection)
         
         performUIUpdatesOnMain {
         self.mapView.removeAnnotations(self.mapView.annotations)
