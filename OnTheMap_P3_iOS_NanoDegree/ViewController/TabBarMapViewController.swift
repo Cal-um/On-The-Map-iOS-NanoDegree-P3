@@ -90,6 +90,7 @@ class TabBarMapViewController: UIViewController {
         
       case let .Failure(error):
         print(error)
+        self.networkErrorAlert()
       }
     }
   }
